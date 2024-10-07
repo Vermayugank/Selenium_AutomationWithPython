@@ -2,46 +2,42 @@
 This project implements a Selenium-based Python script to scrape weather data from the BBC Weather website for a given city. The main function get_weather(driver, days) extracts the weather forecast for a specified number of days, returning a list of tuples that contain weather conditions and maximum temperatures.
 
 The project also includes unit tests to verify the functionality of the scraper.
+
+## Table of Contents
 <ol>
-    <li>Table of Contents</li>
     <li>Features</li>
     <li>Requirements</li>
-
-Installation
-Usage
-Running Unit Tests
-License
+    <li>Installation</li>
+    <li>Usage</li>
+    <li>Running Unit Test</li>
+    <li>License</li>
 </ol>
-Table of Contents
-Features
-Requirements
-Installation
-Usage
-Running Unit Tests
-License
-Features
+
+## Features
 Scrapes BBC Weather for a specified city.
 Extracts weather conditions (e.g., Sunny, Thundery Shower, etc.) and maximum temperatures for the specified days.
 Returns result as a list of tuples: (weather_description: str, max_temperature: int).
 Handles invalid input cases (e.g., days < 1 or days > 10).
 Comes with unit test-based test cases to validate the scraper's functionality.
-Requirements
-Python 3.x
-Selenium
-Web browser (e.g., Firefox) and corresponding WebDriver (e.g., GeckoDriver for Firefox)
-Installation
+## Requirements
+<ul>
+    <li>Python 3.x</li>
+    <li>Selenium</li>
+    <li>Web browser (e.g., Firefox) and corresponding WebDriver (e.g., GeckoDriver for Firefox)</li>
+</ul>
+
+## Installation
 Clone the Repository
+```
+git clone https://github.com/Vermayugank/Selenium_AutomationWithPython.git
+```
 
-bash
-Copy code
-git clone https://github.com/Vermayugank/bbc-weather-scraper.git
-cd bbc-weather-scraper
 Set Up a Virtual Environment (optional but recommended)
-
-bash
-Copy code
+```
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
 Install the Required Packages
 
 bash
