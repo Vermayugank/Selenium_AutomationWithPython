@@ -1,4 +1,4 @@
-#BBC Weather Scraper using Selenium
+# BBC Weather Scraper using Selenium <br>
 This project implements a Selenium-based Python script to scrape weather data from the BBC Weather website for a given city. The main function get_weather(driver, days) extracts the weather forecast for a specified number of days, returning a list of tuples that contain weather conditions and maximum temperatures.
 
 The project also includes unit tests to verify the functionality of the scraper.
