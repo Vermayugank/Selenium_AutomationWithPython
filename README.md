@@ -1,8 +1,92 @@
-## Algorithm of the Automation
-<ul>
-  <li>Navigates to the BBC Weather page for Sofia</li>
-  <li>implements a function get_weather(driver, days) which returns the weather conditions for a given number of days. driver is a Selenium driver object and days is the number of days for which to return results.</li>
-  <li>The return type is a list containing tuples of type (str, int). The first element in the tuple is the human readable name of the weather, e.g. Sunny, Thundery Shower, etc and the second element is the maximum temperature
-</li>
-  <li>If days is not a valid value then return None</li>
-</ul>
+BBC Weather Scraper using Selenium
+This project implements a Selenium-based Python script to scrape weather data from the BBC Weather website for a given city. The main function get_weather(driver, days) extracts the weather forecast for a specified number of days, returning a list of tuples that contain weather conditions and maximum temperatures.
+
+The project also includes unit tests to verify the functionality of the scraper.
+
+Table of Contents
+Features
+Requirements
+Installation
+Usage
+Running Unit Tests
+License
+Features
+Scrapes BBC Weather for a specified city.
+Extracts weather conditions (e.g., Sunny, Thundery Shower, etc.) and maximum temperatures for the specified days.
+Returns result as a list of tuples: (weather_description: str, max_temperature: int).
+Handles invalid input cases (e.g., days < 1 or days > 10).
+Comes with unit test-based test cases to validate the scraper's functionality.
+Requirements
+Python 3.x
+Selenium
+Web browser (e.g., Firefox) and corresponding WebDriver (e.g., GeckoDriver for Firefox)
+Installation
+Clone the Repository
+
+bash
+Copy code
+git clone https://github.com/Vermayugank/bbc-weather-scraper.git
+cd bbc-weather-scraper
+Set Up a Virtual Environment (optional but recommended)
+
+bash
+Copy code
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+Install the Required Packages
+
+bash
+Copy code
+pip install -r requirements.txt
+The requirements.txt file should contain selenium and any other necessary dependencies.
+Download the Browser Driver
+
+If you're using Firefox, download GeckoDriver and add it to your system's PATH.
+If you're using Chrome, you can download ChromeDriver and update the script accordingly.
+Usage
+The main function in this project is get_weather(driver, days), which scrapes weather information from the BBC Weather website.
+
+Here's an example of how to use the function:
+
+python
+Copy code
+from selenium import webdriver
+from solution import get_weather
+
+# Set up the Selenium WebDriver
+driver = webdriver.Firefox()
+
+# Navigate to the BBC Weather page for Sofia
+driver.get('http://www.bbc.com/weather/727011')
+
+# Get the weather forecast for 5 days
+weather_data = get_weather(driver, 5)
+
+# Print the scraped weather data
+for weather_description, max_temp in weather_data:
+    print(f"Weather: {weather_description}, Max Temp: {max_temp}°C")
+
+# Close the driver
+driver.quit()
+Running Unit Tests
+Unit tests are provided to ensure the scraper works correctly. These tests validate:
+
+Correct handling of invalid inputs (e.g., negative or out-of-bound days).
+Correct extraction of weather data for Sofia and New York.
+To run the tests:
+
+Make sure you have unit test (included in Python by default).
+
+Run the following command in your terminal:
+
+bash
+Copy code
+python -m unittest discover
+Example Test Cases
+Invalid Input Handling: Ensure the function returns None for invalid values of days such as -1, 0, and 11.
+Data Extraction for Sofia: Test for the correct extraction of weather data for Sofia, Bulgaria.
+Data Extraction for New York: Test for the correct extraction of weather data for New York, USA.
+The unit tests can be found in test_solution.py.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
